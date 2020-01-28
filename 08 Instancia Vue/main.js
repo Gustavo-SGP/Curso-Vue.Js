@@ -1,4 +1,4 @@
-new Vue({
+const vm1 = new Vue({
     el: 'main',
     data: {
         mensaje: 'Instancia Vue 1',
@@ -12,5 +12,12 @@ new Vue({
         mensajeMayusculas() {
             return this.mensaje.toUpperCase();
         }
+    }
+});
+
+const vm2 = new Vue({
+    el:'#app',
+    data: {
+        mensaje: 'Instancia de Vue 2',
     }
 });
