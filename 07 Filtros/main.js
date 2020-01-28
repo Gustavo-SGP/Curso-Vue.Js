@@ -1,6 +1,7 @@
 new Vue({
     el: 'main',
     data: {
+        busqueda: '',
         minimo: 5,
         juegos: [{
             titulo: 'Batlefield 1',
@@ -23,6 +24,9 @@ new Vue({
     computed: {
         mejoresJuegos() {
             return this.juegos.filter((juego) => juego.puntuacion >= this.minimo);
+        },
+        buscarJuego() {
+            return this.juegos.filter((juego) => juego.titulo.includes(this.busqueda));
         }
     }
 })

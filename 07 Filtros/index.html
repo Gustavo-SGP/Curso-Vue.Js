@@ -11,11 +11,16 @@
 
 <body>
     <main>
+        <input type="search" placeholder="Buscar Juego" v-model="busqueda">
+
         <ul>
-            <li v-for="juego in mejoresJuegos">
+            <li v-for="juego in buscarJuego">
                 {{ juego.titulo }}
             </li>
         </ul>
+
+        <input type="range" min="0" max="10" v-model="minimo">
+
         <pre>{{ $data }}</pre>
     </main>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
