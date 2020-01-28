@@ -6,6 +6,7 @@ const vm1 = new Vue({
     methods: {
         alReves() {
             this.mensaje = this.mensaje.split('').reverse().join('');
+            vm2.mensaje = 'Hola desde instancia 1';
         }
     },
     computed: {
