@@ -1,5 +1,6 @@
 Vue.component('mis-tareas', {
-template: `<p>Hacer la compra</p>`,
+    props: ['tareas'],
+    template: `<ul><li v-for="tarea in tareas">{{ tarea.title }}</li></ul>`,
 });
 
 new Vue({
