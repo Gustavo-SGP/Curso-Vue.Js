@@ -56,12 +56,12 @@
         <button @click="mostrar = !mostrar">Mostrar/Ocultar</button>
 
         <!-- Transition -->
-        <transition name="aparecer">
+        <transition name="aparecer" appear>
             <h1 v-if=mostrar v-text="mensajes.transicion"></h1>
         </transition>
 
         <!-- Animation -->
-        <transition name="bote">
+        <transition name="bote" appear>
             <h1 v-if=mostrar v-text="mensajes.animacion"></h1>
         </transition>
 
@@ -71,8 +71,13 @@
             enter-active-class="animated rotateInUpLeft"
             leave-active-class="animated zoomOutUp">
             <h1 v-if=mostrar v-text="mensajes.animationCustom"></h1>
-        </transition
-        >
+        </transition>
+
+        <!-- Transicion entre elementos -->
+        <transition name="aparecer" mode="out-in">
+            <h1 v-if=mostrar v-text="mensajes.entreElementos" key="aparecer"></h1>
+            <h2 v-else key="ocultar">No hay mensaje</h2>
+        </transition>
 
         <pre>{{$data}}</pre>
     </main>
