@@ -7,13 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue.js</title>
     <meta name="description" content="">
+    <style>
+        /* Transition */
+        .aparecer-enter {
+            opacity: 0;
+        }
+        .aparecer-enter-active {
+            transition: opacity 1s;
+        }
+        .aparecer-leave-to {
+            opacity: 0;
+        }
+        .aparecer-leave-active {
+            transition: opacity 1s;
+        }
+    </style>
 </head>
 
 <body>
     <main>
         <button @click="mostrar = !mostrar">Mostrar/Ocultar</button>
 
-        <h1 v-if=mostrar v-text="mensajes.transicion"></h1>
+        <!-- Transition -->
+        <transition name="aparecer">
+            <h1 v-if=mostrar v-text="mensajes.transicion"></h1>
+        </transition>
 
         <pre>{{$data}}</pre>
     </main>
