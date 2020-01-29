@@ -12,9 +12,14 @@ new Vue({
 
     methods: {
         cargarPersonas() {
-            this.$http.get(this.url)
+            // this.$http.get(this.url)
+            //     .then((respuesta) => {
+            //         this.personas = respuesta.body.results;
+            //     });
+
+            axios.get(this.url)
                 .then((respuesta) => {
-                    this.personas = respuesta.body.results;
+                    this.personas = respuesta.data.results;
                 });
         }
     }
