@@ -15,7 +15,12 @@
             <li v-for="tarea in tareasAjax" v-text="tarea.title"></li>
         </ul> -->
 
+        <h1>Tareas Ajax</h1>
         <mis-tareas :tareas="tareasAjax"></mis-tareas>
+
+        <hr>
+        <h1>Tareas locales</h1>
+        <mis-tareas :tareas="tareasLocales"></mis-tareas>
 
         <pre>{{$data}}</pre>
     </main>

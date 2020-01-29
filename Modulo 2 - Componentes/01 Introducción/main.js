@@ -15,5 +15,10 @@ new Vue({
 
     data: {
         tareasAjax: [],
+        tareasLocales: [
+            {title: 'Hacer la compra'},
+            {title: 'Aprender Vue'},
+            {title: 'Aprender JavaScript ES6'},
+        ]
     }
 });
