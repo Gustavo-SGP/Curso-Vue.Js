@@ -14,7 +14,7 @@ new Vue({
         cargarPersonas() {
             this.$http.get(this.url)
                 .then((respuesta) => {
-                    console.log(respuesta);
+                    this.personas = respuesta.body.results;
                 });
         }
     }
