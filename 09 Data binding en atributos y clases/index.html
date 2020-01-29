@@ -7,13 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue.js</title>
     <meta name="description" content="">
+
+    <style>
+        li {
+            cursor: pointer;
+        }
+        .completado {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 
 <body>
     <main>
         <h1>Tareas</h1>
         <ul>
-            <li v-on:click="completarTarea(tarea)" v-for="tarea in tareas">
+            <li v-bind:class="{completado : tarea.completado}"
+                v-on:click="completarTarea(tarea)" 
+                v-for="tarea in tareas">
+                
                 {{ tarea.titulo }}
             </li>
         </ul>
