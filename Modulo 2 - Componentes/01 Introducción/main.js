@@ -1,3 +1,7 @@
+Vue.component('mis-tareas', {
+template: `<p>Hacer la compra</p>`,
+});
+
 new Vue({
     el:'main',
 
