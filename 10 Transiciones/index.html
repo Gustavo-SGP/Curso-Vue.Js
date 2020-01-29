@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue.js</title>
     <meta name="description" content="">
-    
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
     <style>
         /* Transition */
         .aparecer-enter {
@@ -64,6 +64,15 @@
         <transition name="bote">
             <h1 v-if=mostrar v-text="mensajes.animacion"></h1>
         </transition>
+
+        <!-- Animate.css -->
+        <transition
+            name="animate.css"
+            enter-active-class="animated rotateInUpLeft"
+            leave-active-class="animated zoomOutUp">
+            <h1 v-if=mostrar v-text="mensajes.animationCustom"></h1>
+        </transition
+        >
 
         <pre>{{$data}}</pre>
     </main>
