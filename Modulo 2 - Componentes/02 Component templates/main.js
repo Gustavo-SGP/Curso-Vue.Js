@@ -1,15 +1,16 @@
 Vue.component('elegir-ganador', {
     porps: ['listado'],
-    template: ` <div>
-                    <h1 v-if="ganador">El ganador es: {{ ganador }}</h1>
-                    <template v-else>
-                        <h1>Participantes</h1>
-                        <ul>
-                            <li v-for="persona in listado">{{ persona }}</li>
-                        </ul>
-                        <button @click="elegirGanador">Elegir ganador</button>
-                    </template>
-                </div>`,
+    template: '#elegir-ganador-template',
+    // template: ` <div>
+    //                 <h1 v-if="ganador">El ganador es: {{ ganador }}</h1>
+    //                 <template v-else>
+    //                     <h1>Participantes</h1>
+    //                     <ul>
+    //                         <li v-for="persona in listado">{{ persona }}</li>
+    //                     </ul>
+    //                     <button @click="elegirGanador">Elegir ganador</button>
+    //                 </template>
+    //             </div>`,
     methods: {
         elegirGanador() {
             let cantidad = this.participantes.length;
