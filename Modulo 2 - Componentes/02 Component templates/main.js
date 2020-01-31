@@ -1,6 +1,6 @@
 Vue.component('elegir-ganador', {
     porps: ['listado'],
-    template: '',
+    template: '<ul><li v-for="persona in listado">{{ persona }}</li></ul>',
     methods: {
         elegirGanador() {
             let cantidad = this.participantes.length;
