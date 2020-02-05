@@ -1,5 +1,11 @@
 Vue.component('candidato', {
-    props:['nombre', 'correoe', 'imagen'],
+    //props:['nombre', 'correoe', 'imagen'],
+    //Para este caso props ya no es un arreglo, si no un objeto
+    props: {
+        nombre: String,
+        correoe: String,
+        imagen: String,
+    },
     template: '#candidato-template',
 });
 
