@@ -13,7 +13,9 @@
 <body>
     <main>
         <alerta tipo="alerta--exito" posicion="alerta--abajo-derecha">
-            <template>Nuevo contenido para la alerta</template>
+            <template slot="header">Todo OK</template>
+            <template>Nuevo contenido para la alerta</template>  <!-- texto que reemplaza al por defecto -->
+            <template slot="footer">Puedes continuar</template>
         </alerta>
 
         <pre>{{$data}}</pre>
