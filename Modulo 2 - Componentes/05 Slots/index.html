@@ -18,6 +18,17 @@
             <template slot="footer">Puedes continuar</template>
         </alerta>
 
+        <alerta tipo="alerta--error" posicion="alerta--arriba-derecha">
+            <template slot="header">Error Fatal</template>
+            <template>Contenido del error</template>  <!-- texto que reemplaza al por defecto -->
+            <template slot="footer">F</template>
+        </alerta>
+
+        <alerta tipo="alerta--advertencia" posicion="alerta--abajo-izquierda">
+            <template slot="header">Atención</template>
+            <template>Nuevo contenido para la alerta</template>  <!-- texto que reemplaza al por defecto -->
+            <template slot="footer">Puedes continuar</template>
+        </alerta>
         <pre>{{$data}}</pre>
     </main>
 
