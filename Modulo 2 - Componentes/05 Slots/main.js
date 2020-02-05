@@ -6,7 +6,9 @@ Vue.component('alerta', {
                     Hola
                 </header>
                 <div class="alerta__contenido">
-                    Lorem ipsum dolor sit amet
+                    <slot>
+                        Lorem ipsum dolor sit amet
+                    </slot>
                 </div>
                 <footer class="alerta__footer">
                     Texto del footer
