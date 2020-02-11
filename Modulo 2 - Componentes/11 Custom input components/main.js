@@ -3,10 +3,10 @@ Vue.component('contrasena', {
     template: `<input :value="contrasena" @input="comprobarContrasena($event.target.value)" ref="pass">`,
     methods: {
         comprobarContrasena(contrasena) {
-            // this.$emit('input', contrasena);
             if (this.noValidas.includes(contrasena)) {
                 this.$refs.pass.value = contrasena = '';
             }
+            this.$emit('input', contrasena);
         }
     },
 
