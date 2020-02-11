@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <main>
+        <button @click="mostrarExito = true">Exito</button>
+        <button @click="mostrarError = true">Error</button>
+        <button @click="mostrarAdvertencia = true">Advertencia</button>
+        
+        <alerta v-show="mostrarExito" tipo="alerta--exito" posicion="alerta--abajo-derecha">
+            <template slot="header">Todo OK</template>
+            <template>Nuevo contenido para la alerta</template>  <!-- texto que reemplaza al por defecto -->
+            <template slot="footer">Puedes continuar</template>
+        </alerta>
+
+        <alerta v-show="mostrarError" tipo="alerta--error" posicion="alerta--arriba-derecha">
+            <template slot="header">Error Fatal</template>
+            <template>Contenido del error</template>  <!-- texto que reemplaza al por defecto -->
+            <template slot="footer">F</template>
+        </alerta>
+
+        <alerta v-show="mostrarAdvertencia" tipo="alerta--advertencia" posicion="alerta--abajo-izquierda">
+            <template slot="header">Atención</template>
+            <template>Nuevo contenido para la alerta</template>  <!-- texto que reemplaza al por defecto -->
+            <template slot="footer">Puedes continuar</template>
+        </alerta>
+        <pre>{{$data}}</pre>
+    </main>
+
+
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+   
+    <script src="main.js"></script>
+</body>
+</html>
