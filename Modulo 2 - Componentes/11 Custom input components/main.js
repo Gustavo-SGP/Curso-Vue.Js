@@ -1,9 +1,18 @@
 Vue.component('contrasena', {
     props: ['contrasena'],
-    template: `<input :value="contrasena" @input="comprobarContrasena($event.target.value)">`,
+    template: `<input :value="contrasena" @input="comprobarContrasena($event.target.value)" ref="pass">`,
     methods: {
         comprobarContrasena(contrasena) {
-            this.$emit('input', contrasena);
+            // this.$emit('input', contrasena);
+            if (this.noValidas.includes(contrasena)) {
+                this.$refs.pass.value = contrasena = '';
+            }
+        }
+    },
+
+    data() {
+        return {
+            noValidas: ['abc', 'admin', '123456', 'root'],
         }
     }
 });
