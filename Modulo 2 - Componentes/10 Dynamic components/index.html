@@ -11,9 +11,15 @@
 
 <body>
     <main>
-        <lista-tareas></lista-tareas>
+        <button @click="seleccionado = 'lista-tareas'">Tareas</button>
+        <button @click="seleccionado = 'contacto'">Contacto</button>
+        <button @click="seleccionado = 'bio'">BIO</button>
+
+        <component :is="seleccionado"></component>
+
+        <!-- <lista-tareas></lista-tareas>
         <contacto></contacto>
-        <bio></bio>
+        <bio></bio> -->
         
         <pre>{{$data}}</pre>
     </main>

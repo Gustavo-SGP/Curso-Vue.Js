@@ -5,6 +5,7 @@ Vue.component('lista-tareas', {
                 <ul>
                     <tarea v-for="tarea in tareas" :tarea="tarea"></tarea>
                 </ul>
+                <hr>
             </div>`,
     data() {
         return {
@@ -28,8 +29,11 @@ Vue.component('contacto', {
 });
 
 Vue.component('bio', {
-    template: `<div><p>Lorem ipsum dolor sit amet</p></div>`
+    template: `<div><p>Lorem ipsum dolor sit amet</p> <hr></div>`
 });
 new Vue({
     el: 'main',
+    data: {
+        seleccionado: 'lista-tareas'
+    }
 });
