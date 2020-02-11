@@ -1,3 +1,5 @@
+const eventBus = new Vue();
+
 Vue.component('listado-productos', {
     props: ['productos'],
     template:`
@@ -5,19 +7,19 @@ Vue.component('listado-productos', {
             <ul>
                 <li v-for="producto in productos">
                     {{ producto.nombre }} -
-                    <small>{{ producto.precio.tofixed(2) }}</small>
-                    <button @click="eliminarProducto(producto.precio">-</button>
-                    <button @click="anadirProducto(producto.precio">+</button>
+                    <small>{{ producto.precio.toFixed(2) }}</small>
+                    <button @click="eliminarProducto(producto.precio)">-</button>
+                    <button @click="anadirProducto(producto.precio)">+</button>
                 </li>
             </ul>
         </section>`,
-
+    // Envía entrada el otro componente
     methods: {
         anadirProducto(precio) {
-
+            eventBus.$emit('anadir', precio);
         },
         eliminarProducto(precio) {
-
+            eventBus.$emit('eliminar', precio);
         },
     }
 });
@@ -34,6 +36,22 @@ Vue.component('carrito-compra', {
             total: 0,
         }
     },
+
+    // Resive desde el ortro componente
+    created() {
+        eventBus.$on('anadir', (precio) => {
+            if (this.total >= 0) {
+                this.total += precio;
+                this.cantidadProductos++;
+            }
+        });
+        eventBus.$on('eliminar', (precio) => {
+            if (this.total > 0) {
+                this.total -= precio;
+                this.cantidadProductos--;
+            }
+        });
+    }
 });
 
 new Vue({
