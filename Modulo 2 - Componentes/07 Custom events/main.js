@@ -3,6 +3,7 @@ Vue.component('alerta', {
     template: `
             <section class="alerta" :class="[tipo, posicion]">
                 <header class="alerta__header">
+                    <a href="#" @click="ocultarWidget">Cerrar</a>
                     <slot name="header">Hola</slot>
                 </header>
                 <div class="alerta__contenido">
@@ -14,6 +15,12 @@ Vue.component('alerta', {
                     <slot name="footer">Texto del footer</slot>
                 </footer>
             </section>`,
+    methods: {
+        ocultarWidget() {
+            // Lanzar evento
+            this.$emit('ocultar'); //'ocultar' es un evento custom, como @click, pero ivnetado
+        }
+    },
 });
 
 new Vue({

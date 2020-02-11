@@ -15,22 +15,23 @@
         <button @click="mostrarExito = true">Exito</button>
         <button @click="mostrarError = true">Error</button>
         <button @click="mostrarAdvertencia = true">Advertencia</button>
-        
-        <alerta v-show="mostrarExito" tipo="alerta--exito" posicion="alerta--abajo-derecha">
+
+        <alerta @ocultar="mostrarExito = false" v-show="mostrarExito" tipo="alerta--exito"
+            posicion="alerta--abajo-derecha">
             <template slot="header">Todo OK</template>
-            <template>Nuevo contenido para la alerta</template>  <!-- texto que reemplaza al por defecto -->
+            <template>Nuevo contenido para la alerta</template> <!-- texto que reemplaza al por defecto -->
             <template slot="footer">Puedes continuar</template>
         </alerta>
 
-        <alerta v-show="mostrarError" tipo="alerta--error" posicion="alerta--arriba-derecha">
+        <alerta @ocultar="mostrarError = false" v-show="mostrarError" tipo="alerta--error" posicion="alerta--arriba-derecha">
             <template slot="header">Error Fatal</template>
-            <template>Contenido del error</template>  <!-- texto que reemplaza al por defecto -->
+            <template>Contenido del error</template> <!-- texto que reemplaza al por defecto -->
             <template slot="footer">F</template>
         </alerta>
 
-        <alerta v-show="mostrarAdvertencia" tipo="alerta--advertencia" posicion="alerta--abajo-izquierda">
+        <alerta @ocultar="mostrarAdvertencia = false" v-show="mostrarAdvertencia" tipo="alerta--advertencia" posicion="alerta--abajo-izquierda">
             <template slot="header">Atención</template>
-            <template>Nuevo contenido para la alerta</template>  <!-- texto que reemplaza al por defecto -->
+            <template>Nuevo contenido para la alerta</template> <!-- texto que reemplaza al por defecto -->
             <template slot="footer">Puedes continuar</template>
         </alerta>
         <pre>{{$data}}</pre>
@@ -38,7 +39,8 @@
 
 
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
-   
+
     <script src="main.js"></script>
 </body>
+
 </html>
