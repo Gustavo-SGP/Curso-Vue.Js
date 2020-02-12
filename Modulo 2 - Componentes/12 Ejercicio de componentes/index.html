@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue.js</title>
     <meta name="description" content="">
-</head>
-
+    <link rel="stylesheet" href="main.css"></head>
 <body>
     <main>
-        <usuarios></usuarios>
+        <usuarios>
+            <h1>Usuarios de mi startup</h1>
+        </usuarios>
     </main>
 
     <template id="usuarios-template">
@@ -22,7 +23,18 @@
             </section>
             <hr>
             <section class="usuarios">
-                <p v-for="usuario in usuarios">{{ usuario }}</p>
+                <!-- <p v-for="usuario in usuarios">{{ usuario }}</p> -->
+                <usuario :datos="usuario" v-for="usuario in usuarios"></usuario>
+            </section>
+        </div>
+    </template>
+
+    <template id="usuario-template">
+        <div class="usuario">
+            <img :src="datos.foto" :alt="datos.nombre">
+            <section>
+                <h1>{{ datos.nombre }}</h1>
+                <small>{{ datos.correoe }}</small>
             </section>
         </div>
     </template>
