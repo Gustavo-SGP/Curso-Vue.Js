@@ -19,12 +19,13 @@
         <div>
             <section class="cabecera">
                 <slot></slot>
-                <input type="search" placeholder="Filtrar usuarios">
+                <input type="search" placeholder="Filtrar usuarios" v-model="busqueda">
             </section>
             <hr>
             <section class="usuarios">
                 <!-- <p v-for="usuario in usuarios">{{ usuario }}</p> -->
-                <usuario :datos="usuario" v-for="usuario in usuarios"></usuario>
+                <!-- <usuario :datos="usuario" v-for="usuario in usuarios"></usuario> ANTES DE APLICAR EL FILTRO-->
+                <usuario :datos="usuario" v-for="usuario in filtrarUsuarios"></usuario>
             </section>
         </div>
     </template>

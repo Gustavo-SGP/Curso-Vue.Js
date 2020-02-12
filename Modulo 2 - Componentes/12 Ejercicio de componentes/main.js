@@ -17,6 +17,15 @@ Vue.component('usuarios', {
     data() {
         return {
             usuarios: [],
+            busqueda: '', //Almacena lo que se escribe en el input "search"
+        }
+    },
+
+    computed: {
+        filtrarUsuarios() {
+            return this.usuarios.filter((usuario) => {           //Se busca entre los usuarios los que contengan 
+                return usuario.nombre.inculdes(this.busqueda);  //en su nombre lo que está escrito en busqueda
+            });
         }
     }
 });
